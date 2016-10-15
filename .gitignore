@@ -1,0 +1,3 @@
+configs/.upstream_version
+firmware_images/*
+*.bin

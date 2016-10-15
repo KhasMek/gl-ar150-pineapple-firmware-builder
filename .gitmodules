@@ -1,0 +1,9 @@
+[submodule "binwalk"]
+	path = binwalk
+	url = https://github.com/devttys0/binwalk.git
+[submodule "firmware-mod-kit"]
+	path = firmware-mod-kit
+	url = https://github.com/mirror/firmware-mod-kit
+[submodule "openwrt-cc"]
+	path = openwrt-cc
+	url = https://github.com/domino-team/openwrt-cc.git
