@@ -45,7 +45,7 @@ build_firmware() {
     make -j$(cat /proc/cpuinfo | grep "^processor" | wc -l)
     for line in $(find "$top/openwrt-cc/bin" -name "*-sysupgrade.bin"); do
         cp "$line" "$top/firmware_images/"
-        echo " - [*] File ready at - firmware_images/$line"
+        echo " - [*] File ready at - $line"
     done
    cd "$top"
 }
@@ -75,13 +75,15 @@ full_build() {
 
 if [ "$1" = "-f" ]; then
     rm configs/.upstream_version
+    full_build
 elif
     [ "$1" = "-c" ]; then
     rm -rf firmware_images
     rm -rf firmware-mod-kit/fmk
     cd openwrt-cc
     make dirclean
-    # I may need to sudo rm -rf files/?
+    # do I need sudo doe?
+    rm -rf files
     cd ..
 elif
     [ -z "$1" ]; then
