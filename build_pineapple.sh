@@ -24,7 +24,7 @@ apt_get() {
 
 first_run() {
     cd "$top"
-    #apt_get
+    apt_get
     #git submodule update --recursive --remote
     wget https://www.wifipineapple.com/downloads/nano/latest -O upgrade-"$upstream_version".bin
     echo "BINWALK=binwalk" >> firmware-mod-kit/shared-ng.inc
