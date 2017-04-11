@@ -22,11 +22,19 @@ apt_get() {
     ibssl-dev xsltproc libxml-parser-perl mercurial bzr ecj cvs unzip
 }
 
+install_binwalk() {
+    cd "$top/binwalk"
+    ./deps.sh
+    sudo python setup.py install
+    cd "$top"
+}
+
 first_run() {
     cd "$top"
     apt_get
     #git submodule update --recursive --remote
     wget https://www.wifipineapple.com/downloads/nano/latest -O upgrade-"$upstream_version".bin
+    install_binwalk
     echo "BINWALK=binwalk" >> firmware-mod-kit/shared-ng.inc
     touch configs/.upstream_version
     cp configs/gl-ar150-defconfig openwrt-cc/.config
