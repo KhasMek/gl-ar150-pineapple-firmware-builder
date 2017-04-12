@@ -19,7 +19,7 @@ apt_get() {
     sudo apt-get install -y \
     git build-essential zlib1g-dev liblzma-dev python-magic subversion \
     build-essential git-core libncurses5-dev zlib1g-dev gawk flex quilt \
-    ibssl-dev xsltproc libxml-parser-perl mercurial bzr ecj cvs unzip
+    libssl-dev xsltproc libxml-parser-perl mercurial bzr ecj cvs unzip
 }
 
 install_binwalk() {
