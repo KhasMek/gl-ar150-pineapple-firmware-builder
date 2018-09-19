@@ -6,7 +6,7 @@ extract_firmware() {
     cd "$top/firmware-mod-kit"
     ./extract-firmware.sh "$top"/upgrade-"$upstream_version".bin
     cd "$top"
-    $upstream_version=`cat configs/.upstream_version`
+    echo "$upstream_version" > configs/.upstream_version
     mkdir openwrt-cc/files
     cp -r firmware-mod-kit/fmk/rootfs/* openwrt-cc/files/
     rm -rf openwrt-cc/files/lib/modules/*
