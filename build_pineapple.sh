@@ -18,8 +18,8 @@ apt_get() {
     sudo apt-get update
     sudo apt-get install -y \
     git build-essential zlib1g-dev liblzma-dev python-magic subversion \
-    build-essential git-core libncurses5-dev zlib1g-dev gawk flex quilt \
-    libssl-dev xsltproc libxml-parser-perl mercurial bzr ecj cvs unzip
+    build-essential git-core libncurses5-dev gawk flex quilt curl wget \
+    libssl-dev xsltproc libxml-parser-perl mercurial bzr ecj cvs unzip  
 }
 
 install_binwalk() {
@@ -32,7 +32,7 @@ install_binwalk() {
 first_run() {
     cd "$top"
     apt_get
-    #git submodule update --recursive --remote
+    git submodule update --recursive --remote
     wget https://www.wifipineapple.com/downloads/nano/latest -O upgrade-"$upstream_version".bin
     install_binwalk
     echo "BINWALK=binwalk" >> firmware-mod-kit/shared-ng.inc
