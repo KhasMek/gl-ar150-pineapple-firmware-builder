@@ -18,8 +18,8 @@ apt_get() {
     sudo apt-get update
     sudo apt-get install -y \
     git build-essential zlib1g-dev liblzma-dev python-magic subversion \
-    build-essential git-core libncurses5-dev zlib1g-dev gawk flex quilt \
-    libssl-dev xsltproc libxml-parser-perl mercurial bzr ecj cvs unzip
+    build-essential git-core libncurses5-dev gawk flex quilt curl wget \
+    libssl-dev xsltproc libxml-parser-perl mercurial bzr ecj cvs unzip  
 }
 
 install_binwalk() {
